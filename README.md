@@ -28,8 +28,8 @@ Perform Risk Prediction of Bank Customer using Python
 
 **Class Label's**
 
-0 => Blue => Good
-1 => Orange => Bad
+- 0 => Blue => Good
+- 1 => Orange => Bad
 
 
 3 Models were used to predict the Credit Capabilities of Customer
