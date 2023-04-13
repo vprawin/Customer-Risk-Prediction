@@ -25,6 +25,13 @@ Perform Risk Prediction of Bank Customer using Python
 5. Correlation Matrix / Heat Map
 ![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img8.png)
 
+
+<u>Class Label's</u>
+0 - Blue - Good
+1 - Orange - Bad
+
+
+
 3 Models were used to predict the Credit Capabilities of Customer
 - Decision Tree
 - Random Forest
