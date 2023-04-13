@@ -394,3 +394,99 @@ all_sample_title = 'Accuracy Score for Logistic Regression: {0}'.format(lr.score
 plt.title(all_sample_title, size = 15)
 #=> Text(0.5, 1.0, 'Accuracy Score for Logistic Regression: 0.7388059701492538')
 #Img11.png
+#--------------------------------------------------------------------------------------------------------------------
+            
+            
+# 11. ROC AUC Curve
+#---------------------
+
+#ROC AUC Curve - Decision Tree
+from sklearn.metrics import roc_curve, roc_auc_score
+y_pred_proba = dtree.predict_proba(X_test)[:][:,1]
+
+df_actual_predicted = pd.concat([pd.DataFrame(np.array(y_test), columns=['y_actual']), pd.DataFrame(y_pred_proba, columns=['y_pred_proba'])], axis=1)
+df_actual_predicted.index = y_test.index
+
+fpr, tpr, tr = roc_curve(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+auc = roc_auc_score(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+
+plt.plot(fpr, tpr, label='AUC = %0.4f' %auc)
+plt.plot(fpr, fpr, linestyle = '--', color='k')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve', size = 15)
+plt.legend()
+#Img12.png
+
+#ROC AUC Curve - Random Forest
+from sklearn.metrics import roc_curve, roc_auc_score
+y_pred_proba = rfc.predict_proba(X_test)[:][:,1]
+
+df_actual_predicted = pd.concat([pd.DataFrame(np.array(y_test), columns=['y_actual']), pd.DataFrame(y_pred_proba, columns=['y_pred_proba'])], axis=1)
+df_actual_predicted.index = y_test.index
+
+fpr, tpr, tr = roc_curve(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+auc = roc_auc_score(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+
+plt.plot(fpr, tpr, label='AUC = %0.4f' %auc)
+plt.plot(fpr, fpr, linestyle = '--', color='k')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve', size = 15)
+plt.legend()
+#Img13.png
+
+#ROC AUC Curve - Logistic Regression
+from sklearn.metrics import roc_curve, roc_auc_score
+y_pred_proba = lr.predict_proba(X_test)[:][:,1]
+
+df_actual_predicted = pd.concat([pd.DataFrame(np.array(y_test), columns=['y_actual']), pd.DataFrame(y_pred_proba, columns=['y_pred_proba'])], axis=1)
+df_actual_predicted.index = y_test.index
+
+fpr, tpr, tr = roc_curve(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+auc = roc_auc_score(df_actual_predicted['y_actual'], df_actual_predicted['y_pred_proba'])
+
+plt.plot(fpr, tpr, label='AUC = %0.4f' %auc)
+plt.plot(fpr, fpr, linestyle = '--', color='k')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve', size = 15)
+plt.legend()
+#Img14.png
+#--------------------------------------------------------------------------------------------------------------------
+            
+            
+# 12. Feature Importances
+#------------------------
+
+#Feature Importances - Decision Tree
+imp_df = pd.DataFrame({
+    "Feature Name": X_train.columns,
+    "Importance": dtree.feature_importances_
+})
+fi = imp_df.sort_values(by="Importance", ascending=False)
+
+fi2 = fi.head(10)
+plt.figure(figsize=(10,8))
+sns.barplot(data=fi2, x='Importance', y='Feature Name')
+plt.title('Top 10 Feature Importance Each Attributes (Decision Tree)', fontsize=18)
+plt.xlabel ('Importance', fontsize=16)
+plt.ylabel ('Feature Name', fontsize=16)
+plt.show()
+#Img15.png
+
+#Feature Importances - Random Forest
+imp_df = pd.DataFrame({
+    "Feature Name": X_train.columns,
+    "Importance": rfc.feature_importances_
+})
+fi = imp_df.sort_values(by="Importance", ascending=False)
+
+fi2 = fi.head(10)
+plt.figure(figsize=(10,8))
+sns.barplot(data=fi2, x='Importance', y='Feature Name')
+plt.title('Top 10 Feature Importance Each Attributes (Random Forest)', fontsize=18)
+plt.xlabel ('Importance', fontsize=16)
+plt.ylabel ('Feature Name', fontsize=16)
+plt.show()
+#Img16.png
