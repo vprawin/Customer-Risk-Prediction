@@ -27,6 +27,7 @@ Perform Risk Prediction of Bank Customer using Python
 
 
 **Class Label's**
+
 0 - Blue - Good
 1 - Orange - Bad
 
