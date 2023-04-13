@@ -5,6 +5,7 @@ Perform Risk Prediction of Bank Customer using Python
 - These 20 features are used to predict if the customer could be given a credit
 - Many features required data cleaning.
 
+Bar Charts to plot Frequency of Different Categorical Variable along side "Class" Feature
 ![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img1.png)
 
 3 Models were used to predict the Credit Capabilities of Customer
