@@ -28,9 +28,8 @@ Perform Risk Prediction of Bank Customer using Python
 
 **Class Label's**
 
-0 - Blue - Good
-1 - Orange - Bad
-
+0 => Blue => Good
+1 => Orange => Bad
 
 
 3 Models were used to predict the Credit Capabilities of Customer
@@ -38,5 +37,18 @@ Perform Risk Prediction of Bank Customer using Python
 - Random Forest
 - Logistic Regression
 
-Result: Random Forest Preformed extremely well with an accuracy of 88.4%
+
+Accuracy Matrix of Decision Tree
+![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img9.png)
+
+
+Accuracy Matrix of Random Forest
+![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img10.png)
+
+
+Accuracy Matrix of Logistic Regression
+![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img11.png)
+
+
+**Result: Random Forest Preformed extremely well with an accuracy of 88.4%**
 
