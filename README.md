@@ -26,7 +26,7 @@ Perform Risk Prediction of Bank Customer using Python
 ![alt text](https://github.com/vprawin/Customer-Risk-Prediction/blob/main/Image%20Reference/Img8.png)
 
 
-<u>Class Label's</u>
+**Class Label's**
 0 - Blue - Good
 1 - Orange - Bad
 
